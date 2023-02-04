@@ -163,6 +163,7 @@ public class EnemyAI : MonoBehaviour
     void CaughtPlayer()
     {
         m_CaughtPlayer = true;
+        //atack player!
     }
 
     void LookingPlayer(Vector3 player)
