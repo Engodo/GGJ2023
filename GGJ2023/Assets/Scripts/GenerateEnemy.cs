@@ -4,20 +4,28 @@ using UnityEngine;
 
 public class GenerateEnemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject Enemy; 
+    public GameObject Enemy;
+    public float leftBound = -5F;
+    public float rightBound = 5F;
+
     void Start()
     {
+        //SpawnEnemy();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
 
-    public void InstantiateNewObject()
+    void SpawnEnemy()
     {
+        GameObject enemyClone;
+
+        enemyClone = Instantiate(Enemy, this.transform.position, this.transform.rotation);
+
+        float x = Random.Range(leftBound, rightBound);
+        transform.position = new Vector3(x, this.transform.position.y, 0);
     }
 }
